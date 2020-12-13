@@ -1,0 +1,25 @@
+Setting:
+    LevelFormat: '&7物品等级:'
+    Color:
+        '1':
+            lore: '&7稀有'
+            value: 5.0
+        '2':
+            lore: '&a罕见'
+            value: 10.0
+    Formula: 'level + color * 0.5 + 10'
+UI:
+    info:
+        id: 111
+        name: '&6分解'
+        lore: []
+    result:
+        id: 50
+        name: '&a分解结果'
+        lore:
+            - '&a预计的分解物品会显示在底下'
+    buttom:
+        id: 54
+        durability: 0
+        name: '&a点击分解'
+        lore: []
