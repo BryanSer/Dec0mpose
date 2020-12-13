@@ -1,0 +1,58 @@
+Items:
+  item1:
+    level: 1
+    name: '&7一级精炼石'
+    value: 15
+
+SlotPosition:
+  slot1:
+    text:
+      0: '&b○ &7<可精炼: 攻击力: +?>'
+      1: '&b◉ &7<已精炼: 攻击力: +%A%>'
+    formula: 'value * 0.5 + 1'
+
+UI:
+  Install:
+    info:
+      id: 111
+      name: '&6安装'
+      lore: [ ]
+    result:
+      id: 50
+      name: '&a安装结果'
+      lore:
+        - '&a预计的安装效果会显示在底下'
+    buttom:
+      buttom1:
+        id: 54
+        durability: 0
+        name: '&a确定'
+        lore: [ ]
+      button2:
+        id: 55
+        durability: 0
+        name: '&a取消'
+        lore: [ ]
+  Remove:
+    info:
+      id: 222
+      name: '&6卸除'
+      lore: [ ]
+    result:
+      id: 50
+      name: '&a卸除结果'
+      lore:
+        - '&a预计的分解物品会显示在底下'
+    buttom:
+      buttom1:
+        id: 54
+        durability: 0
+        name: '&a确定'
+        lore: [ ]
+      button2:
+        id: 55
+        durability: 0
+        name: '&a取消'
+        lore: [ ]
+
+

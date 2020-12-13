@@ -1,5 +1,6 @@
 package com.github.bryanser.dec0mpose
 
+import com.github.bryanser.dec0mpose.refine.RefineSetting
 import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
@@ -16,6 +17,7 @@ class Dec0mpose : JavaPlugin() {
     override fun onEnable() {
         Setting.loadConfig()
         Setting.loadDItem()
+        RefineSetting.loadConfig()
     }
 
     override fun onDisable() {
@@ -47,6 +49,9 @@ class Dec0mpose : JavaPlugin() {
         if (args[0].equals("reload", true)) {
             Setting.loadConfig()
             Setting.loadDItem()
+
+            RefineSetting.loadConfig()
+
             sender.sendMessage("§6重载完成")
             return true
         }

@@ -13,3 +13,7 @@ commands:
             §c/<command> reload >> 重载插件
             §c/<command> add [消耗] [前置条件] >> 添加手上物品到分解结果中
             §c§l  范例/<command> add 10.5 1,2,3,4,5
+    Refine:
+        aliases: [rf,refine]
+        usage: |
+            §6/<command> >> 打开界面
