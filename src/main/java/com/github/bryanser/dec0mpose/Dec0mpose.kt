@@ -1,8 +1,10 @@
 package com.github.bryanser.dec0mpose
 
 import com.github.bryanser.dec0mpose.refine.RefineSetting
+import com.github.bryanser.dec0mpose.refine.RefineView
 import org.bukkit.Bukkit
 import org.bukkit.command.Command
+import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.configuration.serialization.ConfigurationSerialization
 import org.bukkit.entity.Player
@@ -18,6 +20,14 @@ class Dec0mpose : JavaPlugin() {
         Setting.loadConfig()
         Setting.loadDItem()
         RefineSetting.loadConfig()
+        getCommand("Refine").executor = CommandExecutor { sender: CommandSender, command: Command, label: String, args: Array<String> ->
+            if (sender is Player) {
+                RefineView.openView(sender)
+                true
+            } else {
+                false
+            }
+        }
     }
 
     override fun onDisable() {
@@ -39,7 +49,7 @@ class Dec0mpose : JavaPlugin() {
             return true
         }
         if (args[0].equals("open", true) && args.size >= 2) {
-            val target = Bukkit.getPlayerExact(args[1]) ?: run{
+            val target = Bukkit.getPlayerExact(args[1]) ?: run {
                 sender.sendMessage("§c找不到玩家${args[1]}")
                 return true
             }

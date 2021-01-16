@@ -40,20 +40,23 @@ class Dec0mposeViewContext(p: Player) : KViewContext("§6分解") {
     }
 }
 
-const val SLOT = 4
+const val SLOT = 10
 const val BOTTOM = 16
-const val INFO = 44
+const val INFO = 26
 
 @Suppress("Unsupported")
-val RESULT = [30, 31, 32, 39, 40, 41, 48, 49, 50]
-val Dec0mposeView = KViewHandler.createKView("Dec0mpose View", 6, ::Dec0mposeViewContext) {
-    val galss = ItemBuilder.createItem(Material.STAINED_GLASS_PANE) {
+val RESULT = [4,5,6,13,14,15,22,23,24]
+val Dec0mposeView = KViewHandler.createKView("Dec0mpose View", 3, ::Dec0mposeViewContext) {
+    val galss = ItemBuilder.createItem(Material.STAINED_GLASS_PANE,durability = 15) {
         name(" ")
+        lore{
+            +"§0skill_0"
+        }
     }
     onClose {
         Utils.safeGiveItem(player, inventory.getItem(SLOT))
     }
-    for (i in 0 until 54) {
+    for (i in 0 until 27) {
         icon(i) {
             initDisplay(galss)
         }
@@ -72,12 +75,7 @@ val Dec0mposeView = KViewHandler.createKView("Dec0mpose View", 6, ::Dec0mposeVie
             false
         }
     }
-    icon(13) {
-        initDisplay {
-            Setting.result
-        }
-    }
-    icon(22) {
+    icon(11) {
         initDisplay {
             Setting.result
         }

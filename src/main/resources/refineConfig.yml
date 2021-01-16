@@ -1,58 +1,48 @@
 Items:
-  item1:
-    level: 1
-    name: '&7一级精炼石'
-    value: 15
-
+    item1:
+        name: '&7一级精炼石'
+        value: 15
+        level: 10
+ItemLevel: '物品等级:'
 SlotPosition:
-  slot1:
-    text:
-      0: '&b○ &7<可精炼: 攻击力: +?>'
-      1: '&b◉ &7<已精炼: 攻击力: +%A%>'
-    formula: 'value * 0.5 + 1'
+    slot1:
+        text:
+            original: '&b○ &7<可精炼: 攻击力: +?>'
+            result: '&b◉ &7<已精炼: 攻击力: +%var%>'
+        expression: 'value * 0.5 + 1 + level + itemLevel'
+        #显示的数字表达式
+        # #.##表示保留两位小数, #.##%会自动计算成百分比(1为100.00%)
+        format: "#.##"
 
 UI:
-  Install:
     info:
-      id: 111
-      name: '&6安装'
-      lore: [ ]
-    result:
-      id: 50
-      name: '&a安装结果'
-      lore:
-        - '&a预计的安装效果会显示在底下'
-    buttom:
-      buttom1:
+        id: 111
+        name: '&6精炼'
+        lore:
+            - '&6箱子信息'
+    disable:
+        id: 50
+        durability: 4
+        name: '&a红色玻璃'
+        lore: []
+    decoration:
         id: 54
         durability: 0
-        name: '&a确定'
-        lore: [ ]
-      button2:
-        id: 55
-        durability: 0
-        name: '&a取消'
-        lore: [ ]
-  Remove:
-    info:
-      id: 222
-      name: '&6卸除'
-      lore: [ ]
-    result:
-      id: 50
-      name: '&a卸除结果'
-      lore:
-        - '&a预计的分解物品会显示在底下'
-    buttom:
-      buttom1:
+        name: '&a白色玻璃'
+        lore: []
+    able:
         id: 54
-        durability: 0
-        name: '&a确定'
-        lore: [ ]
-      button2:
-        id: 55
-        durability: 0
-        name: '&a取消'
-        lore: [ ]
-
-
+        durability: 1
+        lore:
+            - '&a可精炼: %original%'
+    installed:
+        id: 54
+        durability: 3
+        name: "&a已精炼"
+        lore:
+            - '&a已精炼: %result%'
+            - '&eshift+右键点击卸除精炼'
+    other:
+        id: 1
+        name: "&a睡莲位置"
+        lore: []
